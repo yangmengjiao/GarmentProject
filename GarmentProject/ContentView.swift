@@ -1,16 +1,19 @@
 //
 //  ContentView.swift
-//  GarmentProject
+//  GarmentList
 //
 //  Created by mengjiao on 2/17/21.
 //
 
 import SwiftUI
+import RealmSwift
 
 struct ContentView: View {
+    @EnvironmentObject var viewModel: GarmentListViewModel
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        NavigationView {
+            GarmentListView(garments: viewModel.garmentsByName)
+        }
     }
 }
 

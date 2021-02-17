@@ -3,18 +3,27 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		4B04190225DD95FB004601D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B04190125DD95FB004601D8 /* AppDelegate.swift */; };
 		4B04190425DD95FB004601D8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B04190325DD95FB004601D8 /* SceneDelegate.swift */; };
-		4B04190625DD95FB004601D8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B04190525DD95FB004601D8 /* ContentView.swift */; };
 		4B04190825DD9600004601D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B04190725DD9600004601D8 /* Assets.xcassets */; };
 		4B04190B25DD9600004601D8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B04190A25DD9600004601D8 /* Preview Assets.xcassets */; };
 		4B04190E25DD9600004601D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B04190C25DD9600004601D8 /* LaunchScreen.storyboard */; };
 		4B04191925DD9600004601D8 /* GarmentProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B04191825DD9600004601D8 /* GarmentProjectTests.swift */; };
 		4B04192425DD9601004601D8 /* GarmentProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B04192325DD9601004601D8 /* GarmentProjectUITests.swift */; };
+		4B04193C25DD961E004601D8 /* GarmentListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B04193525DD961E004601D8 /* GarmentListViewModel.swift */; };
+		4B04193D25DD961E004601D8 /* Garment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B04193725DD961E004601D8 /* Garment.swift */; };
+		4B04193E25DD961E004601D8 /* GarmentDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B04193825DD961E004601D8 /* GarmentDB.swift */; };
+		4B04193F25DD961E004601D8 /* GarmentListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B04193A25DD961E004601D8 /* GarmentListView.swift */; };
+		4B04194025DD961E004601D8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B04193B25DD961E004601D8 /* ContentView.swift */; };
+		4B04194625DD97C6004601D8 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 4B04194525DD97C6004601D8 /* Realm */; };
+		4B04194825DD97C6004601D8 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4B04194725DD97C6004601D8 /* RealmSwift */; };
+		4B04195C25DDA603004601D8 /* GarmentFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B04195B25DDA602004601D8 /* GarmentFormView.swift */; };
+		4B04196425DDB03F004601D8 /* GarmentForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B04196325DDB03F004601D8 /* GarmentForm.swift */; };
+		4B66A8DF25DDDBFE00363A13 /* Nimble in Frameworks */ = {isa = PBXBuildFile; productRef = 4B66A8DE25DDDBFE00363A13 /* Nimble */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +47,6 @@
 		4B0418FE25DD95FB004601D8 /* GarmentProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GarmentProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B04190125DD95FB004601D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4B04190325DD95FB004601D8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4B04190525DD95FB004601D8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4B04190725DD9600004601D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4B04190A25DD9600004601D8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4B04190D25DD9600004601D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +57,13 @@
 		4B04191F25DD9601004601D8 /* GarmentProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GarmentProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B04192325DD9601004601D8 /* GarmentProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarmentProjectUITests.swift; sourceTree = "<group>"; };
 		4B04192525DD9601004601D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4B04193525DD961E004601D8 /* GarmentListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GarmentListViewModel.swift; sourceTree = "<group>"; };
+		4B04193725DD961E004601D8 /* Garment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Garment.swift; sourceTree = "<group>"; };
+		4B04193825DD961E004601D8 /* GarmentDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GarmentDB.swift; sourceTree = "<group>"; };
+		4B04193A25DD961E004601D8 /* GarmentListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GarmentListView.swift; sourceTree = "<group>"; };
+		4B04193B25DD961E004601D8 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		4B04195B25DDA602004601D8 /* GarmentFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarmentFormView.swift; sourceTree = "<group>"; };
+		4B04196325DDB03F004601D8 /* GarmentForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarmentForm.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +71,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B66A8DF25DDDBFE00363A13 /* Nimble in Frameworks */,
+				4B04194825DD97C6004601D8 /* RealmSwift in Frameworks */,
+				4B04194625DD97C6004601D8 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,9 +117,12 @@
 		4B04190025DD95FB004601D8 /* GarmentProject */ = {
 			isa = PBXGroup;
 			children = (
+				4B04193625DD961E004601D8 /* Model */,
+				4B04193925DD961E004601D8 /* View */,
+				4B04193425DD961E004601D8 /* ViewModel */,
 				4B04190125DD95FB004601D8 /* AppDelegate.swift */,
 				4B04190325DD95FB004601D8 /* SceneDelegate.swift */,
-				4B04190525DD95FB004601D8 /* ContentView.swift */,
+				4B04193B25DD961E004601D8 /* ContentView.swift */,
 				4B04190725DD9600004601D8 /* Assets.xcassets */,
 				4B04190C25DD9600004601D8 /* LaunchScreen.storyboard */,
 				4B04190F25DD9600004601D8 /* Info.plist */,
@@ -136,6 +157,33 @@
 			path = GarmentProjectUITests;
 			sourceTree = "<group>";
 		};
+		4B04193425DD961E004601D8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4B04193525DD961E004601D8 /* GarmentListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		4B04193625DD961E004601D8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4B04193725DD961E004601D8 /* Garment.swift */,
+				4B04193825DD961E004601D8 /* GarmentDB.swift */,
+				4B04196325DDB03F004601D8 /* GarmentForm.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4B04193925DD961E004601D8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4B04193A25DD961E004601D8 /* GarmentListView.swift */,
+				4B04195B25DDA602004601D8 /* GarmentFormView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -152,6 +200,11 @@
 			dependencies = (
 			);
 			name = GarmentProject;
+			packageProductDependencies = (
+				4B04194525DD97C6004601D8 /* Realm */,
+				4B04194725DD97C6004601D8 /* RealmSwift */,
+				4B66A8DE25DDDBFE00363A13 /* Nimble */,
+			);
 			productName = GarmentProject;
 			productReference = 4B0418FE25DD95FB004601D8 /* GarmentProject.app */;
 			productType = "com.apple.product-type.application";
@@ -223,6 +276,10 @@
 				Base,
 			);
 			mainGroup = 4B0418F525DD95FB004601D8;
+			packageReferences = (
+				4B04194425DD97C6004601D8 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+				4B66A8DD25DDDBFE00363A13 /* XCRemoteSwiftPackageReference "Nimble" */,
+			);
 			productRefGroup = 4B0418FF25DD95FB004601D8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -266,9 +323,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B04193C25DD961E004601D8 /* GarmentListViewModel.swift in Sources */,
+				4B04195C25DDA603004601D8 /* GarmentFormView.swift in Sources */,
 				4B04190225DD95FB004601D8 /* AppDelegate.swift in Sources */,
+				4B04194025DD961E004601D8 /* ContentView.swift in Sources */,
+				4B04196425DDB03F004601D8 /* GarmentForm.swift in Sources */,
+				4B04193D25DD961E004601D8 /* Garment.swift in Sources */,
 				4B04190425DD95FB004601D8 /* SceneDelegate.swift in Sources */,
-				4B04190625DD95FB004601D8 /* ContentView.swift in Sources */,
+				4B04193E25DD961E004601D8 /* GarmentDB.swift in Sources */,
+				4B04193F25DD961E004601D8 /* GarmentListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -597,6 +660,43 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4B04194425DD97C6004601D8 /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-cocoa.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.6.0;
+			};
+		};
+		4B66A8DD25DDDBFE00363A13 /* XCRemoteSwiftPackageReference "Nimble" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Quick/Nimble.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4B04194525DD97C6004601D8 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4B04194425DD97C6004601D8 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = Realm;
+		};
+		4B04194725DD97C6004601D8 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4B04194425DD97C6004601D8 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
+		};
+		4B66A8DE25DDDBFE00363A13 /* Nimble */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4B66A8DD25DDDBFE00363A13 /* XCRemoteSwiftPackageReference "Nimble" */;
+			productName = Nimble;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4B0418F625DD95FB004601D8 /* Project object */;
 }
