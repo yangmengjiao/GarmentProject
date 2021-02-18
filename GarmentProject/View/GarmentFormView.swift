@@ -7,11 +7,10 @@
 
 import SwiftUI
 
-/*
- The Form of add Garment  
- */
+/// The Form of add Garment
 struct GarmentFormView: View {
-    // all the constants
+    
+    /// All the constant
     struct Constant {
         struct Alert {
             static let title = "Alert"
@@ -25,16 +24,26 @@ struct GarmentFormView: View {
         
     }
     
+    /// model view
     @EnvironmentObject var viewModel: GarmentListViewModel
+    
+    /// use it to dismiss view
     @Environment(\.presentationMode) var presentationMode
+    
+    /// Form of Garment
     @ObservedObject var form: GarmentForm
+    
+    /// title for alert
     @State private var alertTitle = Constant.Alert.title
+    
+    /// message for alert
     @State private var alertMessage = Constant.Alert.msg
+    
+    /// true measn show alert,  false means hide alert
     @State private var showingAlert = false
     
     var body: some View {
         NavigationView {
-            
             VStack(alignment: .leading) {
                 Text(Constant.textField)
                     .font(.callout)
@@ -57,10 +66,14 @@ struct GarmentFormView: View {
 
 // MARK: - Actions
 extension GarmentFormView {
+    
+    /// dis miss garment form view
    private func dismiss() {
         presentationMode.wrappedValue.dismiss()
     }
     
+    
+    /// save garment action
    private func saveGarment() {
         if form.name.isEmpty {
             showingAlert = true

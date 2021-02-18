@@ -7,11 +7,10 @@
 
 import SwiftUI
 
-/*
- The Lists of Garment
- */
+///  The List View of Garment
 struct GarmentListView: View {
-    // all the constant
+    
+    /// All the constant
     struct Constant {
         static let alpha = "Alpha"
         static let createdTime = "Creation Time"
@@ -22,16 +21,21 @@ struct GarmentListView: View {
         static let addButtonSystemName = "plus"
     }
     
-    // model view
+    /// model view
     @EnvironmentObject var viewModel: GarmentListViewModel
     
+    /// sort methods that showing in the picker
     var sortMethod = [Constant.alpha, Constant.createdTime]
+    
+    /// currently selected picker
     @State private var selectedSortMethod = Constant.alpha
+    
+    /// true means show add Garment view. false means not show
     @State private var showAddSheet = false
     
     var body: some View {
         VStack {
-            // Sort method picker
+            /// Sort method picker
             Picker(Constant.pickerMsg, selection: $selectedSortMethod) {
                 ForEach(sortMethod, id: \.self) {
                     Text($0)
@@ -39,7 +43,7 @@ struct GarmentListView: View {
             }
             .pickerStyle(SegmentedPickerStyle())
     
-            // the lists
+            /// the lists
             List {
                 Section(header: Text(Constant.headerOfList)) {
                     if viewModel.garmentsByName.isEmpty {
@@ -47,12 +51,12 @@ struct GarmentListView: View {
                             .foregroundColor(.gray)
                     }
                     if selectedSortMethod == Constant.alpha {
-                        // show list by alphabetical order
+                        /// show list by alphabetical order
                         ForEach(viewModel.garmentsByName) { garment in
                             Text(garment.name)
                         }
                     } else {
-                        // show list by created date order
+                        /// show list by created date order
                         ForEach(viewModel.garmentsByDate) { garment in
                             Text(garment.name)
                         }
@@ -64,7 +68,7 @@ struct GarmentListView: View {
             .navigationBarItems(trailing:Button(action: addGarment) {
                 Image(systemName: Constant.addButtonSystemName)
             })
-            //show add form
+            ///show GarmentForm view
             .sheet(isPresented: $showAddSheet, content: {
                 GarmentFormView(form: GarmentForm())
                   .environmentObject(self.viewModel)
@@ -73,6 +77,8 @@ struct GarmentListView: View {
     }
     
     // MARK: - Actions
+    
+    /// add garment action
    private func addGarment() {
         self.showAddSheet.toggle()
     }
