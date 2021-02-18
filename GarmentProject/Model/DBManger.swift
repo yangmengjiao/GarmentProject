@@ -9,8 +9,14 @@ import Foundation
 import RealmSwift
 
 protocol DBManagerProtocol {
+    associatedtype RealmObject: Object
     // save object to databse
     static func save(_ object: Object)
+    
+    /**
+     Fetch objects list sorted by keyPath 
+     */
+    static func sortedObjects(by keyPath: String, ascending: Bool) -> Results<RealmObject>
     
     // update object to databse
     static func update(_ object: Object)
@@ -20,8 +26,9 @@ protocol DBManagerProtocol {
 }
 
 class DBManger<T: Object>: DBManagerProtocol {
- 
-
+    
+    typealias RealmObject = T
+    
     // MARK: - Database CRUD
     
     // save
@@ -44,7 +51,7 @@ class DBManger<T: Object>: DBManagerProtocol {
         return realm.objects(T.self).sorted(byKeyPath: keyPath, ascending: ascending)
         
     }
-    
+ 
     static func update(_ object: Object) {
         //todo in the future
     }
