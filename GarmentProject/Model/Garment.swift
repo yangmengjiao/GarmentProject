@@ -7,25 +7,25 @@
 import Foundation
 import RealmSwift
 
-/*
- Represent Garment
- */
+/// Garment
 struct Garment: Identifiable {
-  // the unique id
-  let id: Int
+    // The identifier
+    let id: Int
     
-  // Name of garment
-  let name: String
+    // Name of garment
+    let name: String
     
-  // The time of creation of this Garment
-  let createdDate: Date?
+    // Create date
+    let createdDate: Date?
 }
 
-// MARK: Convenience init
+
 extension Garment {
-  init(garmentDB: GarmentDB) {
-    id = garmentDB.id
-    name = garmentDB.name
-    createdDate = garmentDB.createdDate
-  }
+    /// init method
+    /// - Parameter garmentDB: the database garment object
+    init(garmentDB: GarmentDB) {
+        id = garmentDB.id
+        name = garmentDB.name
+        createdDate = garmentDB.createdDate
+    }
 }

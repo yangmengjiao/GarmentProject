@@ -8,9 +8,7 @@
 import Foundation
 import RealmSwift
 
-/*
- The DataBase object of Garment
- */
+/// The DataBase object of Garment
 class GarmentDB: Object {
     struct Constant {
         static let id = "id"
@@ -24,13 +22,17 @@ class GarmentDB: Object {
     @objc dynamic var name = ""
     @objc dynamic var createdDate: Date?
     
+    
+    ///set the  primary key
+    /// - Returns: primary key for DB
     override static func primaryKey() -> String? {
         Constant.id
     }
     
     // MARK: - Database CRUD
     
-    // save to DB
+    /// save garment to database
+    /// - Parameter name: name of garment
     class func save(_ name: String) {
             let garmentDB = GarmentDB()
             garmentDB.id = UUID().hashValue
@@ -40,11 +42,15 @@ class GarmentDB: Object {
     }
     
     // sorted by date
+    
+    /// Fetch  data that sorted by created date
+    /// - Returns: list of garment
     class func newestFirst() -> Results<GarmentDB> {
         return DBManger<GarmentDB>.sortedObjects(by: Constant.KeyPath.createdDate, ascending: false)
     }
     
-    // sorted by name
+    /// Fetch  data that sorted by garment name
+    /// - Returns: list of garment
     class func alphaSequence() -> Results<GarmentDB> {
         return DBManger<GarmentDB>.sortedObjects(by: Constant.KeyPath.name, ascending: true)
     }

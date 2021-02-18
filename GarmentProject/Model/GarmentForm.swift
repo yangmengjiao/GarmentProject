@@ -6,10 +6,11 @@
 //
 import Foundation
 
-/*
- Add Garment Submition form
- */
+
+/// Add Garment Submition form
 class GarmentForm: ObservableObject {
+    
+    /// Garment name 
   @Published var name = ""
 
   init() { }

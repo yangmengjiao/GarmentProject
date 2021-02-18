@@ -8,20 +8,27 @@
 import Foundation
 import RealmSwift
 
+/// Protocol For Data Base Manger
 protocol DBManagerProtocol {
+    
     associatedtype RealmObject: Object
-    // save object to databse
+    
+    /// Save object
+    /// - Parameter object: the object that be saved
     static func save(_ object: Object)
     
-    /**
-     Fetch objects list sorted by keyPath 
-     */
+    /// Fetch results
+    /// - Parameters:
+    ///   - keyPath: sored method
+    ///   - ascending: true means ascending , false means descending
     static func sortedObjects(by keyPath: String, ascending: Bool) -> Results<RealmObject>
     
-    // update object to databse
+    /// Update object
+    /// - Parameter object: the object that be updated
     static func update(_ object: Object)
     
-    // delete object to databse
+    /// Delete objects
+    /// - Parameter object: the object that be deleted
     static func delete(_ object: Object)
 }
 
@@ -30,8 +37,6 @@ class DBManger<T: Object>: DBManagerProtocol {
     typealias RealmObject = T
     
     // MARK: - Database CRUD
-    
-    // save
     static func save(_ object: Object) {
         do {
             let realm = try Realm()
@@ -45,7 +50,6 @@ class DBManger<T: Object>: DBManagerProtocol {
         }
     }
     
-    // read
     static func sortedObjects(by keyPath: String, ascending: Bool) -> Results<T> {
         let realm = try! Realm()
         return realm.objects(T.self).sorted(byKeyPath: keyPath, ascending: ascending)
@@ -53,11 +57,11 @@ class DBManger<T: Object>: DBManagerProtocol {
     }
  
     static func update(_ object: Object) {
-        //todo in the future
+        //TODO: to do in the future
     }
     
     static func delete(_ object: Object) {
-        //todo in the future
+        //TODO: to do in the future 
     }
     
    
