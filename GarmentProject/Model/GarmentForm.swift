@@ -11,8 +11,6 @@ import Foundation
  */
 class GarmentForm: ObservableObject {
   @Published var name = ""
-    
-  var garmentId: Int?
 
   init() { }
 

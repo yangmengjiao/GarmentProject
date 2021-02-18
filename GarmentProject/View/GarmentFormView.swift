@@ -57,11 +57,11 @@ struct GarmentFormView: View {
 
 // MARK: - Actions
 extension GarmentFormView {
-    func dismiss() {
+   private func dismiss() {
         presentationMode.wrappedValue.dismiss()
     }
     
-    func saveGarment() {
+   private func saveGarment() {
         if form.name.isEmpty {
             showingAlert = true
         } else {

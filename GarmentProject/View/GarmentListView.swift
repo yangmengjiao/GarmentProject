@@ -73,7 +73,7 @@ struct GarmentListView: View {
     }
     
     // MARK: - Actions
-    func addGarment() {
+   private func addGarment() {
         self.showAddSheet.toggle()
     }
 }
