@@ -9,7 +9,7 @@ import Foundation
 import RealmSwift
 
 /*
- The Database Layer
+ The DataBase object of Garment
  */
 class GarmentDB: Object {
     struct Constant {
@@ -32,33 +32,21 @@ class GarmentDB: Object {
     
     // save to DB
     class func save(_ name: String) {
-        do {
-            let realm = try Realm()
-            
             let garmentDB = GarmentDB()
             garmentDB.id = UUID().hashValue
             garmentDB.name = name
             garmentDB.createdDate = Date()
-            try realm.write {
-                realm.add(garmentDB)
-            }
-            
-        } catch let error {
-            // Handle error
-            print(error.localizedDescription)
-        }
+        DBManger<GarmentDB>.save(garmentDB)
     }
     
     // sorted by date
     class func newestFirst() -> Results<GarmentDB> {
-        let realm = try! Realm()
-        return realm.objects(GarmentDB.self).sorted(byKeyPath: Constant.KeyPath.createdDate, ascending: false)
+        return DBManger<GarmentDB>.sortedObjects(by: Constant.KeyPath.createdDate, ascending: false)
     }
     
     // sorted by name
     class func alphaSequence() -> Results<GarmentDB> {
-        let realm = try! Realm()
-        return realm.objects(GarmentDB.self).sorted(byKeyPath: Constant.KeyPath.name, ascending: true)
+        return DBManger<GarmentDB>.sortedObjects(by: Constant.KeyPath.name, ascending: true)
     }
 
 }

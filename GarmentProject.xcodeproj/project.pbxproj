@@ -22,6 +22,7 @@
 		4B04195C25DDA603004601D8 /* GarmentFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B04195B25DDA602004601D8 /* GarmentFormView.swift */; };
 		4B04196425DDB03F004601D8 /* GarmentForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B04196325DDB03F004601D8 /* GarmentForm.swift */; };
 		4B06EC3225DE08B300B4EF50 /* GarmentListViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B06EC3125DE08B300B4EF50 /* GarmentListViewModelSpec.swift */; };
+		4B2C614A25DEB2AF00DEF956 /* DBManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2C614925DEB2AF00DEF956 /* DBManger.swift */; };
 		4B66A8FF25DDE7CE00363A13 /* GarmentDBSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B66A8FE25DDE7CE00363A13 /* GarmentDBSpec.swift */; };
 		4EBE40F985DA46319AE52883 /* Pods_GarmentProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97D8086CE3FBC9B98BAB7E17 /* Pods_GarmentProjectTests.framework */; };
 		AD2A93B7FC32690A7B8FDA6D /* Pods_GarmentProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B07717BD86FB72EAFD562B1 /* Pods_GarmentProject.framework */; };
@@ -58,6 +59,7 @@
 		4B04195B25DDA602004601D8 /* GarmentFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarmentFormView.swift; sourceTree = "<group>"; };
 		4B04196325DDB03F004601D8 /* GarmentForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarmentForm.swift; sourceTree = "<group>"; };
 		4B06EC3125DE08B300B4EF50 /* GarmentListViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarmentListViewModelSpec.swift; sourceTree = "<group>"; };
+		4B2C614925DEB2AF00DEF956 /* DBManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManger.swift; sourceTree = "<group>"; };
 		4B66A8FE25DDE7CE00363A13 /* GarmentDBSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GarmentDBSpec.swift; sourceTree = "<group>"; };
 		7869E3B074C4AF0C13D63B6A /* Pods-GarmentProject-GarmentProjectUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GarmentProject-GarmentProjectUITests.debug.xcconfig"; path = "Target Support Files/Pods-GarmentProject-GarmentProjectUITests/Pods-GarmentProject-GarmentProjectUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7D0BE4012276D68CD179C217 /* Pods-GarmentProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GarmentProject.release.xcconfig"; path = "Target Support Files/Pods-GarmentProject/Pods-GarmentProject.release.xcconfig"; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 				4B04193725DD961E004601D8 /* Garment.swift */,
 				4B04193825DD961E004601D8 /* GarmentDB.swift */,
 				4B04196325DDB03F004601D8 /* GarmentForm.swift */,
+				4B2C614925DEB2AF00DEF956 /* DBManger.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -373,6 +376,7 @@
 				4B04190225DD95FB004601D8 /* AppDelegate.swift in Sources */,
 				4B04194025DD961E004601D8 /* ContentView.swift in Sources */,
 				4B04196425DDB03F004601D8 /* GarmentForm.swift in Sources */,
+				4B2C614A25DEB2AF00DEF956 /* DBManger.swift in Sources */,
 				4B04193D25DD961E004601D8 /* Garment.swift in Sources */,
 				4B04190425DD95FB004601D8 /* SceneDelegate.swift in Sources */,
 				4B04193E25DD961E004601D8 /* GarmentDB.swift in Sources */,
