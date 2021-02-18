@@ -10,7 +10,7 @@ import RealmSwift
 /*
  Represent Garment
  */
-struct Garment: Identifiable, RealmCollectionValue {
+struct Garment: Identifiable {
   // the unique id
   let id: Int
     
