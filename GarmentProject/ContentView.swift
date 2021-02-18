@@ -8,11 +8,14 @@
 import SwiftUI
 import RealmSwift
 
+/*
+ The entry view of app
+ */
 struct ContentView: View {
     @EnvironmentObject var viewModel: GarmentListViewModel
     var body: some View {
         NavigationView {
-            GarmentListView(garments: viewModel.garmentsByName)
+            GarmentListView()
         }
     }
 }

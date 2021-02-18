@@ -6,14 +6,13 @@
 //
 import Foundation
 
+/*
+ Add Garment Submition form
+ */
 class GarmentForm: ObservableObject {
   @Published var name = ""
     
   var garmentId: Int?
-
-  var updating: Bool {
-    garmentId != nil
-  }
 
   init() { }
 

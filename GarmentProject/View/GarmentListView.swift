@@ -7,33 +7,52 @@
 
 import SwiftUI
 
+/*
+ The Lists of Garment
+ */
 struct GarmentListView: View {
+    // all the constant
+    struct Constant {
+        static let alpha = "Alpha"
+        static let createdTime = "Creation Time"
+        static let pickerMsg = "Please choose sort method"
+        static let headerOfList = "Garments"
+        static let noGarmentMsg = "Add some garments to the list🥬"
+        static let title = "List"
+        static let addButtonSystemName = "plus"
+    }
+    
+    // model view
     @EnvironmentObject var viewModel: GarmentListViewModel
-    var sortMethod = ["Alpha", "Creation Time"]
-    @State private var selectedSortMethod = "Alpha"
+    
+    var sortMethod = [Constant.alpha, Constant.createdTime]
+    @State private var selectedSortMethod = Constant.alpha
     @State private var showAddSheet = false
-    let garments: [Garment]
     
     var body: some View {
         VStack {
-            Picker("Please choose a color", selection: $selectedSortMethod) {
+            // Sort method picker
+            Picker(Constant.pickerMsg, selection: $selectedSortMethod) {
                 ForEach(sortMethod, id: \.self) {
                     Text($0)
                 }
             }
             .pickerStyle(SegmentedPickerStyle())
     
+            // the lists
             List {
-                Section(header: Text("Garments")) {
+                Section(header: Text(Constant.headerOfList)) {
                     if viewModel.garmentsByName.isEmpty {
-                        Text("Add some garments to the list🥬")
+                        Text(Constant.noGarmentMsg)
                             .foregroundColor(.gray)
                     }
-                    if selectedSortMethod == "Alpha" {
+                    if selectedSortMethod == Constant.alpha {
+                        // show list by alphabetical order
                         ForEach(viewModel.garmentsByName) { garment in
                             Text(garment.name)
                         }
                     } else {
+                        // show list by created date order
                         ForEach(viewModel.garmentsByDate) { garment in
                             Text(garment.name)
                         }
@@ -41,10 +60,11 @@ struct GarmentListView: View {
                 }
             }
             .listStyle(GroupedListStyle())
-            .navigationBarTitle("List", displayMode: .inline)
+            .navigationBarTitle(Constant.title, displayMode: .inline)
             .navigationBarItems(trailing:Button(action: addGarment) {
-                Image(systemName: "plus")
+                Image(systemName: Constant.addButtonSystemName)
             })
+            //show add form
             .sheet(isPresented: $showAddSheet, content: {
                 GarmentFormView(form: GarmentForm())
                   .environmentObject(self.viewModel)
@@ -52,10 +72,14 @@ struct GarmentListView: View {
         }
     }
     
+    // MARK: - Actions
     func addGarment() {
         self.showAddSheet.toggle()
     }
 }
+
+
+// MARK: - Previews
 #if DEBUG
 struct GarmentListView_Previews: PreviewProvider {
     static var previews: some View {
